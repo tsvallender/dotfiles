@@ -1,0 +1,4 @@
+[user]
+  email = trevor@foxsoft.co.uk
+[commit]
+  template = ~/fs/git_template

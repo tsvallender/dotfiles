@@ -1,0 +1,52 @@
+[user]
+        name = Trevor Vallender
+        email = trevor@tsvallender.co.uk
+[includeIf "gitdir:~/foxsoft/"]
+        path = ~/.config/git/config_foxsoft
+[includeIf "gitdir:~/fs/"]
+        path = ~/.config/git/config_foxsoft
+[core]
+        autocrlf = input
+        safecrlf = true
+        excludesfile = $XDG_CONFIG_HOME/git/gitignore
+        editor = nvim
+[alias]
+        aa = add -A
+        ap = add --patch
+        aap = !git add --intent-to-add . && git add --patch
+        br = branch
+        cb = clone --bare
+        co = checkout
+        cm = commit
+        cma = commit --amend
+        g = log --all --grep # Search commit messages
+        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+        last = log -1 HEAD
+        pf = push --force
+        pmr = push -o merge_request.create -o merge_request.assign="trevor" -o merge_request.remove_source_branch
+        pmrup = !git push -u origin $(git symbolic-ref --short HEAD) -o merge_request.create -o merge_request.assign="trevor" -o merge_request.remove_source_branch
+        pmrd = pmr -o merge_request.draft
+        pmrdup = pmrup -o merge_request.draft
+        pushup = !git push -u origin $(git symbolic-ref --short HEAD)
+        rbd = rebase develop
+        rbi = rebase -i # Useful for squashing commits
+        st = status
+        tree = log --oneline --graph --decorate --all
+        undo-commit = reset --soft HEAD~
+        wa = worktree add
+        wr = worktree remove
+[init]
+        defaultBranch = main
+[interactive]
+        diffFilter = delta --color-only
+[delta]
+        features = collared-trogon
+        navigate = true  # use n and N to move between diff sections
+        side-by-side = true
+        line-numbers = true
+[merge]
+        conflictstyle = diff3
+[diff]
+        colorMoved = default
+
+

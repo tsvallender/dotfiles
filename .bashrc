@@ -104,4 +104,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-eval "$(/home/tsv/.rbenv/bin/rbenv init - bash)"
+eval "$(~/.rbenv/bin/rbenv init - bash)"

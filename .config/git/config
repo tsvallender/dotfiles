@@ -19,6 +19,7 @@
         co = checkout
         cm = commit
         cma = commit --amend
+        cmf = commit --fixup
         g = log --all --grep # Search commit messages
         hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
         last = log -1 HEAD
@@ -37,8 +38,6 @@
         wr = worktree remove
 [init]
         defaultBranch = main
-[interactive]
-        diffFilter = delta --color-only
 [delta]
         features = collared-trogon
         navigate = true  # use n and N to move between diff sections

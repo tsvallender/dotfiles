@@ -16,6 +16,7 @@
         aap = !git add --intent-to-add . && git add --patch
         br = branch
         cb = clone --bare
+        cp = cherry-pick
         co = checkout
         cm = commit
         cma = commit --amend

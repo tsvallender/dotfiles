@@ -37,6 +37,13 @@ vim.keymap.set('n', '<leader>tlq', vim.diagnostic.setloclist, {})
 vim.keymap.set('n', 'P', vim.diagnostic.open_float, {})
 vim.keymap.set('n', 'H', function() vim.lsp.buf.hover() end, opts)
 vim.keymap.set("n", "<leader>tlf", vim.lsp.buf.format) -- Format code
+-- DAP
+vim.keymap.set('n', '<leader>db', require('dap').toggle_breakpoint)
+vim.keymap.set('n', '<leader>dc', require('dap').continue)
+vim.keymap.set('n', '<leader>di', require('dap').step_into)
+vim.keymap.set('n', '<leader>do', require('dap').step_over)
+vim.keymap.set('n', '<leader>dr', require('dap').repl.open)
+vim.keymap.set('n', '<leader>dx', require('dap').terminate)
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 

@@ -7,7 +7,7 @@ set.softtabstop = 2
 set.expandtab = true
 set.number = true
 set.relativenumber = true
-set.mouse='r'
+--set.mouse='r'
 
 --- Plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -54,6 +54,8 @@ require("lazy").setup({
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
   "chaoren/vim-wordmotion",
+  "tpope/vim-fugitive",
+  "tpope/vim-surround",
 })
 
 require("tsv.remap")
@@ -65,6 +67,21 @@ require("gruvbox").setup({
   transparent_mode = true,
 })
 vim.cmd([[colorscheme gruvbox]])
+
+local _border = "single"
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover, {
+    border = _border
+  }
+)
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help, {
+    border = _border
+  }
+)
+vim.diagnostic.config{
+  float={border=_border}
+}
 
 -- Improve terminal setup
 vim.api.nvim_command("autocmd TermOpen * startinsert")
@@ -126,6 +143,79 @@ cmp.setup {
   })
 }
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+--
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require"lspconfig".ruby_ls.setup{}
+-- LSP servers
+-- Stimulus
+require'lspconfig'.stimulus_ls.setup{}
+-- Ruby
+require'lspconfig'.ruby_ls.setup{}
+-- CSS
+require'lspconfig'.cssls.setup {
+  capabilities = capabilities,
+}
+-- SQL
+require'lspconfig'.sqlls.setup{}
+-- JavaScript
+require'lspconfig'.eslint.setup{}
+-- HTML
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+}
+-- JSON
+require'lspconfig'.jsonls.setup {
+  capabilities = capabilities,
+}
+-- BASH
+require'lspconfig'.bashls.setup{}
+-- Cucumber
+require'lspconfig'.cucumber_language_server.setup{}
+-- Docker
+require'lspconfig'.dockerls.setup{}
+require'lspconfig'local dap, dapui = require("dap"), require("dapui")
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
 
+require("dapui").setup()
+dap.adapters.ruby = function(callback, config)
+  callback {
+    type = "server",
+    host = "127.0.0.1",
+    port = "${port}",
+    executable = {
+      command = "bundle",
+      args = { "exec", "rdbg", "-n", "--open", "--port", "${port}",
+        "-c", "--", "bundle", "exec", config.command, config.script,
+      },
+    },
+  }
+end
+
+dap.configurations.ruby = {
+  {
+    type = "ruby",
+    name = "debug current file",
+    request = "attach",
+    localfs = true,
+    command = "ruby",
+    script = "${file}",
+  },
+  {
+    type = "ruby",
+    name = "run current spec file",
+    request = "attach",
+    localfs = true,
+    command = "rspec",
+    script = "${file}",
+  },
+}

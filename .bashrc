@@ -36,11 +36,6 @@ PS1+=' $(__git_ps1 [$YELLOW%s$CLEAR]) \n'
 PS1+="➮ \[$BOLD\]"
 trap 'printf "\033[0m" >&2' DEBUG
 
-if command -v fzf-share >/dev/null; then
-  source "$(fzf-share)/key-bindings.bash"
-  source "$(fzf-share)/completion.bash"
-fi
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -105,3 +100,5 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(~/.rbenv/bin/rbenv init - bash)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

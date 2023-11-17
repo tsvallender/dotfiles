@@ -7,7 +7,6 @@ set.softtabstop = 2
 set.expandtab = true
 set.number = true
 set.relativenumber = true
---set.mouse='r'
 
 --- Plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -25,7 +24,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup({
-  "folke/which-key.nvim",
   { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
@@ -56,6 +54,18 @@ require("lazy").setup({
   "chaoren/vim-wordmotion",
   "tpope/vim-fugitive",
   "tpope/vim-surround",
+  "tpope/vim-rails",
+  "rrethy/nvim-treesitter-endwise",
+  "Eandrju/cellular-automaton.nvim",
+  "romainl/vim-cool",
+  {
+    "folke/zen-mode.nvim",
+    opts = {
+      plugins = {
+        tmux = { enabled = true },
+      }
+    }
+  }
 })
 
 require("tsv.remap")

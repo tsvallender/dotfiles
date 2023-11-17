@@ -44,8 +44,11 @@ vim.keymap.set('n', '<leader>di', require('dap').step_into)
 vim.keymap.set('n', '<leader>do', require('dap').step_over)
 vim.keymap.set('n', '<leader>dr', require('dap').repl.open)
 vim.keymap.set('n', '<leader>dx', require('dap').terminate)
-
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+-- Zen mode
+vim.keymap.set('n', '<leader>zz', require('zen-mode').toggle)
+-- AAAARGH
+vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+vim.keymap.set("n", "<leader>cnw", "<cmd>CellularAutomaton game_of_life<CR>")
 
 -- Custom Telescope commands for Rails
 vim.keymap.set('n', '<leader>trj', function()

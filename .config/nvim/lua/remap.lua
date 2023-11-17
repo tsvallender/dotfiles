@@ -34,7 +34,7 @@ vim.keymap.set('n', '<leader>tlw', builtin.lsp_workspace_symbols, {})
 vim.keymap.set('n', '<leader>tlD', builtin.diagnostics, {})
 vim.keymap.set('n', '<leader>tlK', vim.lsp.buf.signature_help, {})
 vim.keymap.set('n', '<leader>tlq', vim.diagnostic.setloclist, {})
-vim.keymap.set('n', 'P', vim.diagnostic.open_float, {})
+vim.keymap.set('n', 'E', vim.diagnostic.open_float, {})
 vim.keymap.set('n', 'H', function() vim.lsp.buf.hover() end, opts)
 vim.keymap.set("n", "<leader>tlf", vim.lsp.buf.format) -- Format code
 -- DAP

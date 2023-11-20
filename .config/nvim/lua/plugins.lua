@@ -39,6 +39,8 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",
   -- Icons for Treesitter/nvim-tree
   "nvim-tree/nvim-web-devicons",
+  -- LSP icons
+  "onsails/lspkind.nvim",
   -- LSP completion
   "sar/cmp-lsp.nvim",
   -- Treesitter completion

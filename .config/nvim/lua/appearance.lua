@@ -18,3 +18,9 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 vim.diagnostic.config{
   float={border=_border}
 }
+
+-- git-messenger
+vim.g.git_messenger_floating_win_opts = {
+  border = _border
+}
+vim.g.git_messenger_include_diff = "current"

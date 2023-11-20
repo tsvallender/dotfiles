@@ -2,6 +2,7 @@ alias weather="curl wttr.in/~Isle+of+Wight"
 alias pubip="curl -4 icanhazip.com"
 alias less="less -r"
 [[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
+alias be="bundle exec"
 alias checkport="sudo netstat -tnlp | grep"
 alias de="devenv"
 alias dockerpurge="docker system prune --all --force --volumes"

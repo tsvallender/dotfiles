@@ -82,6 +82,9 @@ vim.keymap.set('n', '<leader>ds', ':Gvdiffsplit!<CR>');
 vim.keymap.set('n', '<leader>gl', ':diffget //2<CR>'); -- 'Get left' window
 vim.keymap.set('n', '<leader>gr', ':diffget //3<CR>'); -- 'Get right' window
 
+-- Git messenger
+vim.keymap.set('n', '<leader>gm', ':GitMessenger<CR>');
+
 -- Nvim-tree
 vim.keymap.set("n", "<leader>nt", vim.cmd.NvimTreeToggle, {})
 

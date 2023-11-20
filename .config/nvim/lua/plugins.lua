@@ -12,12 +12,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- Gruvbox theme
   { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
+  -- Telescope: fuzzy finder
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
+  -- File tree
   "nvim-tree/nvim-tree.lua",
+  -- Treesitter
   "nvim-treesitter/nvim-treesitter",
   {
     "Exafunction/codeium.vim",
@@ -29,23 +33,36 @@ require("lazy").setup({
       vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
     end
   },
+  -- Completion framework
   "hrsh7th/nvim-cmp",
+  -- LSP setup
   "neovim/nvim-lspconfig",
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
+  -- Icons for Treesitter/nvim-tree
   "nvim-tree/nvim-web-devicons",
+  -- LSP completion
   "sar/cmp-lsp.nvim",
+  -- Treesitter completion
   "ray-x/cmp-treesitter",
+  -- Git blame popup
   "rhysd/git-messenger.vim",
+  -- Debugger
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
+  -- Vi motion within camelcase, underscore, etc
   "chaoren/vim-wordmotion",
+  -- Git
   "tpope/vim-fugitive",
+  -- Edit parens etc.
   "tpope/vim-surround",
+  -- Rails utilities
   "tpope/vim-rails",
+  -- Auto input 'end's
   "rrethy/nvim-treesitter-endwise",
+  -- Blow shit up
   "Eandrju/cellular-automaton.nvim",
+  -- Auto disable search highlight
   "romainl/vim-cool",
+  -- Focus on current buffer
   {
     "folke/zen-mode.nvim",
     opts = {

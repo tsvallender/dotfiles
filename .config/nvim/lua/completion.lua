@@ -19,9 +19,17 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'nvim_lsp_document_symbol' },
+    { name = 'nvim_lsp_signature_help' },
     { name = 'vsnip' },
     { name = 'path' },
     { name = 'treesitter' },
+    { name = 'buffer' },
+    { name = 'tmux' },
+    { name = 'kitty' },
+    { name = 'latex_symbols' },
+    { name = 'emoji' },
+    { name = 'html-css' },
   }),
   formatting = {
     format = lspkind.cmp_format({

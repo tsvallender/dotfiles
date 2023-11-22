@@ -35,16 +35,24 @@ require("lazy").setup({
   },
   -- Completion framework
   "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-nvim-lsp-document-symbol",
+  "hrsh7th/cmp-nvim-lsp-signature-help",
+  "ray-x/cmp-treesitter",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline",
+  "andersevenrud/cmp-tmux",
+  "garyhurtz/cmp_kitty",
+  "kdheepak/cmp-latex-symbols",
+  "hrsh7th/cmp-emoji",
+  "Jezda1337/nvim-html-css",
+
   -- LSP setup
   "neovim/nvim-lspconfig",
   -- Icons for Treesitter/nvim-tree
   "nvim-tree/nvim-web-devicons",
   -- LSP icons
   "onsails/lspkind.nvim",
-  -- LSP completion
-  "sar/cmp-lsp.nvim",
-  -- Treesitter completion
-  "ray-x/cmp-treesitter",
   -- Git blame popup
   "rhysd/git-messenger.vim",
   -- Debugger

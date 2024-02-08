@@ -12,4 +12,6 @@ alias tp="$HOME/bin/tmux_pair.bash"
 alias tpdf="termpdf.py"
 alias tn="tmux new-window -n"
 alias genpdf="pandoc -o migration.pdf -t ms"
-
+CFLAGS="-Wall -Werror -Wextra"
+alias cc="gcc ${CFLAGS}"
+alias update_ruby_build="git -C "$(rbenv root)"/plugins/ruby-build pull"

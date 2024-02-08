@@ -9,7 +9,7 @@ vim.keymap.set('n', '<leader>pD', ":pu!=strftime('%c')<CR>");
 -- Telescope
 local builtin = require('telescope.builtin')
 local telescope = require('telescope')
-vim.keymap.set('n', '<leader>tf', builtin.find_files, {}) -- Open files
+vim.keymap.set('n', '<leader>tf', "<cmd>Telescope find_files hidden=true<cr>", {}) -- Open files
 vim.keymap.set('n', '<leader>ts', builtin.live_grep, {})  -- Grep files
 vim.keymap.set('n', '<leader>tb', builtin.buffers, {})    -- Neovim buffers
 vim.keymap.set('n', '<leader>tm', builtin.man_pages, {}) -- man pages

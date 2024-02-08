@@ -12,28 +12,39 @@
         editor = nvim
 [alias]
         aa = add -A
+        # Selectively add files
         ap = add --patch
+        # Selectively add files—including new ones
         aap = !git add --intent-to-add . && git add --patch
         br = branch
         cb = clone --bare
         cp = cherry-pick
+        # Show all commits on the current branch but not develop
+        curr = "!git log --no-merges \"$(git rev-parse --abbrev-ref HEAD)\" ^develop"
         co = checkout
         cm = commit
         cma = commit --amend
-        cmf = commit --fixup
+        # Fixup commit with all staged changes
+        fu = "!sh -c '(git diff-files --quiet || (echo Unstaged changes, please commit or stash with --keep-index; exit 1)) && COMMIT=$(git rev-parse $1) && git commit --fixup=$COMMIT && git rebase -i --autosquash $COMMIT~1' -"
         g = log --all --grep # Search commit messages
         hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
         last = log -1 HEAD
+        maindiff = "!git log --no-merges develop ^main"
+        noci = -o ci.skip
         pf = push --force
-        pmr = push -o merge_request.create -o merge_request.assign="trevor" -o merge_request.remove_source_branch
+        # Create a merge request, assign it to me
         pmrup = !git push -u origin $(git symbolic-ref --short HEAD) -o merge_request.create -o merge_request.assign="trevor" -o merge_request.remove_source_branch
-        pmrd = pmr -o merge_request.draft
+        # Create a merge request, assign it to me, mark it as draft
         pmrdup = pmrup -o merge_request.draft
+        # Push against a new tracking branch with the same name
         pushup = !git push -u origin $(git symbolic-ref --short HEAD)
+        rb = rebase
         rbd = rebase develop
-        rbi = rebase -i # Useful for squashing commits
+        rbi = rebase -i
+        sq = "!f() { git reset --soft HEAD~$1 && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; }; f"
         st = status
         tree = log --oneline --graph --decorate --all
+        #  “Undo” the last commit, leaving its contents staged
         undo-commit = reset --soft HEAD~
         wa = worktree add
         wr = worktree remove

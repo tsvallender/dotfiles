@@ -74,3 +74,6 @@ dap.configurations.ruby = {
   },
 }
 
+require("nvim-lightbulb").setup({
+  autocmd = { enabled = true },
+})

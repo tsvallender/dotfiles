@@ -7,6 +7,7 @@ set.expandtab = true
 set.number = true
 set.relativenumber = true
 set.cursorline = true
+set.termguicolors = true
 
 -- Improve terminal setup
 vim.api.nvim_command("autocmd TermOpen * startinsert")

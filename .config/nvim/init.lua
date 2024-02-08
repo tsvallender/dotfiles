@@ -1,8 +1,23 @@
+require('options')
 require('plugins') -- Install plugins with Lazy
-require('options') -- Basic vim options
-require('appearance') -- Appearance
 require('completion') -- Completion
 require('lsp') -- LSP
 require('remap') -- Keymaps
 require('tree') -- Nvim-tree
 require('treesitter') -- Treesitter
+require('appearance') -- Appearance
+
+require('telescope').setup{
+  defaults = {
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--hidden',
+    }
+  }
+}

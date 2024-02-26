@@ -7,6 +7,8 @@ XDG_STATE_HOME=$HOME/.state
 
 LC_ALL="en_GB.UTF-8"
 
+export DIP=false
+
 # Sane defaults for history
 HISTFILE=$XDG_STATE_HOME/.bash_history
 HISTSIZE=10000

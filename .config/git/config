@@ -27,11 +27,11 @@
         # Fixup commit with all staged changes
         fu = "!sh -c '(git diff-files --quiet || (echo Unstaged changes, please commit or stash with --keep-index; exit 1)) && COMMIT=$(git rev-parse $1) && git commit --fixup=$COMMIT && git rebase -i --autosquash $COMMIT~1' -"
         g = log --all --grep # Search commit messages
-        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+        hist = log -p --
         last = log -1 HEAD
         maindiff = "!git log --no-merges develop ^main"
         noci = -o ci.skip
-        pf = push --force
+        pf = push --force-with-lease
         # Create a merge request, assign it to me
         pmrup = !git push -u origin $(git symbolic-ref --short HEAD) -o merge_request.create -o merge_request.assign="trevor" -o merge_request.remove_source_branch
         # Create a merge request, assign it to me, mark it as draft

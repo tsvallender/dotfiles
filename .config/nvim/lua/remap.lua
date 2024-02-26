@@ -88,4 +88,4 @@ vim.keymap.set('n', '<leader>gm', ':GitMessenger<CR>');
 -- Nvim-tree
 vim.keymap.set("n", "<leader>nt", vim.cmd.NvimTreeToggle, {})
 
-
+vim.keymap.set("n", "<leader>gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", {noremap=true})

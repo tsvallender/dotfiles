@@ -23,6 +23,7 @@ vim.keymap.set('n', '<leader>tgh', builtin.git_bcommits, {}) -- Current buffer's
 vim.keymap.set('n', '<leader>tgb', builtin.git_branches, {}) -- CR: checkout, C-t: track, C-r: rebase, C-a: create, C-s: switch, C-d: delete, C-y: merge
 vim.keymap.set('n', '<leader>tgs', builtin.git_stash, {}) -- List stash, apply with CR
 -- LSP functionality (tl prefix)
+vim.keymap.set('n', '<leader>tla', function() vim.lsp.buf.code_action() end, bufopts)
 vim.keymap.set('n', '<leader>tlr', builtin.lsp_references, {})
 vim.keymap.set('n', '<leader>tli', builtin.lsp_incoming_calls, {})
 vim.keymap.set('n', '<leader>tlo', builtin.lsp_outgoing_calls, {})
@@ -49,6 +50,8 @@ vim.keymap.set('n', '<leader>zz', require('zen-mode').toggle)
 -- AAAARGH
 vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
 vim.keymap.set("n", "<leader>cnw", "<cmd>CellularAutomaton game_of_life<CR>")
+-- Codeium
+vim.keymap.set("n", "<leader>cc", "<cmd>call codeium#Chat()<CR>")
 
 -- Custom Telescope commands for Rails
 vim.keymap.set('n', '<leader>trj', function()

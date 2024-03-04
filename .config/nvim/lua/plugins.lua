@@ -71,8 +71,6 @@ require("lazy").setup({
   "Eandrju/cellular-automaton.nvim",
   -- Auto disable search highlight
   "romainl/vim-cool",
-  -- Wiki
-  "vimwiki/vimwiki",
   -- Focus on current buffer
   {
     "folke/zen-mode.nvim",
@@ -82,22 +80,8 @@ require("lazy").setup({
       }
     }
   },
-  {
-    "folke/trouble.nvim",
-    dependencies = "nvim-tree/nvim-web-devicons",
-    config = function()
-      require("trouble").setup()
-    end
-  },
   "mateuszwieloch/automkdir.nvim",
-  {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
-      "sindrets/diffview.nvim",        -- optional - Diff integration
-      "nvim-telescope/telescope.nvim", -- optional
-    },
-    config = true
-  }
+  -- REPL
+  "https://gitlab.com/HiPhish/repl.nvim"
 })
 

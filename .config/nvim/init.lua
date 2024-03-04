@@ -1,3 +1,4 @@
+vim.g.mapleader = " "
 require('options')
 require('plugins') -- Install plugins with Lazy
 require('completion') -- Completion

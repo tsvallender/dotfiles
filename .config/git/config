@@ -61,3 +61,5 @@
         colorMoved = default
 
 
+[maintenance]
+	repo = /home/tsv/foxsoft/directors_uk/clapboard

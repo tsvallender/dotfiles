@@ -5,7 +5,6 @@ require('completion') -- Completion
 require('lsp') -- LSP
 require('remap') -- Keymaps
 require('tree') -- Nvim-tree
-require('treesitter') -- Treesitter
 require('appearance') -- Appearance
 
 require('telescope').setup{

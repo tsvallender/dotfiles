@@ -8,6 +8,7 @@ XDG_STATE_HOME=$HOME/.state
 LC_ALL="en_GB.UTF-8"
 
 export DIP=false
+export HYPRSHOT_DIR=/home/tsv/img/screenshots
 
 # Sane defaults for history
 HISTFILE=$XDG_STATE_HOME/.bash_history
@@ -35,7 +36,7 @@ BOLD='\033[01m'
 
 PS1="\n\n[$GREEN\\]\h$CLEAR\\]] [$BLUE\\]\w$CLEAR\\]]"
 PS1+=' $(__git_ps1 [$YELLOW%s$CLEAR]) \n'
-PS1+="➮ \[$BOLD\]"
+PS1+=" \[$BOLD\]"
 trap 'printf "\033[0m" >&2' DEBUG
 
 # If not running interactively, don't do anything
@@ -101,6 +102,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-eval "$(~/.rbenv/bin/rbenv init - bash)"
+#eval "$(~/.rbenv/bin/rbenv init - bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -6,8 +6,8 @@ fi
 
 # Auto-completion
 # ---------------
-source "/home/tsv/.fzf/shell/completion.bash"
+source "/home/tsv/.fzf/completion.bash"
 
 # Key bindings
 # ------------
-source "/home/tsv/.fzf/shell/key-bindings.bash"
+source "/home/tsv/.fzf/key-bindings.bash"

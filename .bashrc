@@ -9,6 +9,7 @@ LC_ALL="en_GB.UTF-8"
 
 export DIP=false
 export HYPRSHOT_DIR=/home/tsv/img/screenshots
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/openssl-1.0.2u/lib
 
 # Sane defaults for history
 HISTFILE=$XDG_STATE_HOME/.bash_history

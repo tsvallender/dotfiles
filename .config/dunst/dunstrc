@@ -43,7 +43,7 @@
     # section for how to disable this if necessary
     idle_threshold = 120
 
-    font = Monospace 14
+    font = Monospace 12
     line_height = 0
 
     # Possible values are:

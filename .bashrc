@@ -7,9 +7,10 @@ XDG_STATE_HOME=$HOME/.state
 
 LC_ALL="en_GB.UTF-8"
 
-export DIP=false
-export HYPRSHOT_DIR=/home/tsv/img/screenshots
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/openssl-1.0.2u/lib
+DIP=false
+HYPRSHOT_DIR=/home/tsv/img/screenshots
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/openssl-1.0.2u/lib
+XDG_DOWNLOAD_DIR=$HOME/downloads
 
 # Sane defaults for history
 HISTFILE=$XDG_STATE_HOME/.bash_history

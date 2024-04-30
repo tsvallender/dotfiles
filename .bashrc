@@ -104,6 +104,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-eval "$(rbenv init - bash)"
+eval "$(~/.rbenv/bin/rbenv init - bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

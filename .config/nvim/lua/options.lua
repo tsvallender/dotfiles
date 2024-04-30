@@ -8,6 +8,7 @@ set.number = true
 set.relativenumber = true
 set.cursorline = true
 set.termguicolors = true
+set.grepprg = 'rg --vimgrep --smart-case'
 
 -- Improve terminal setup
 vim.api.nvim_command("autocmd TermOpen * startinsert")

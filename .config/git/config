@@ -19,8 +19,8 @@
         br = branch
         cb = clone --bare
         cp = cherry-pick
-        # Show all commits on the current branch but not develop
-        curr = "!git log --no-merges \"$(git rev-parse --abbrev-ref HEAD)\" ^develop"
+        # Show all commits on the current branch but not main
+        curr = "!git log --no-merges \"$(git rev-parse --abbrev-ref HEAD)\" ^main"
         co = checkout
         cm = commit
         cma = commit --amend

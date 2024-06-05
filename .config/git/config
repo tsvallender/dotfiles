@@ -1,10 +1,8 @@
 [user]
         name = Trevor Vallender
         email = trevor@tsvallender.co.uk
-[includeIf "gitdir:~/foxsoft/"]
-        path = ~/.config/git/config_foxsoft
-[includeIf "gitdir:~/fs/"]
-        path = ~/.config/git/config_foxsoft
+[includeIf "gitdir:~/boxstuff/"]
+        path = ~/.config/git/config_boxstuff
 [core]
         autocrlf = input
         safecrlf = true

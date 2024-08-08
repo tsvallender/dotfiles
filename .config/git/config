@@ -8,6 +8,9 @@
         safecrlf = true
         excludesfile = $XDG_CONFIG_HOME/git/gitignore
         editor = nvim
+        pager = delta
+[interactive]
+        diffFilter = delta --color-only
 [alias]
         aa = add -A
         # Selectively add files
@@ -57,7 +60,3 @@
         conflictstyle = diff3
 [diff]
         colorMoved = default
-
-
-[maintenance]
-	repo = /home/tsv/foxsoft/directors_uk/clapboard

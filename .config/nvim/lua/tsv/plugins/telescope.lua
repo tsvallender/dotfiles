@@ -2,6 +2,20 @@ return {
   'nvim-telescope/telescope.nvim', tag = '0.1.4',
   dependencies = { 'nvim-lua/plenary.nvim' },
   config = function()
+    require('telescope').setup{
+      defaults = {
+        vimgrep_arguments = {
+          'rg',
+          '--color=never',
+          '--no-heading',
+          '--with-filename',
+          '--line-number',
+          '--column',
+          '--smart-case',
+          '--hidden',
+        }
+      }
+    }
     local builtin = require('telescope.builtin')
     local telescope = require('telescope')
     vim.keymap.set('n', '<leader>tf', "<cmd>Telescope find_files hidden=true<cr>", {}) -- Open files
@@ -30,28 +44,28 @@ return {
 
     -- Custom Rails shortcuts
     vim.keymap.set('n', '<leader>trj', function()
-        builtin.find_files({ search_dirs = { "app/javascript", "app/assets/javascripts" } })
+      builtin.find_files({ search_dirs = { "app/javascript", "app/assets/javascripts" } })
     end, { desc = "Open Rails Javascripts" } )
     vim.keymap.set('n', '<leader>trsj', function()
-        builtin.live_grep({ search_dirs = { "app/javascript", "app/assets/javascripts" } })
+      builtin.live_grep({ search_dirs = { "app/javascript", "app/assets/javascripts" } })
     end, { desc = "Grep Rails Javascripts" } )
     vim.keymap.set('n', '<leader>trm', function()
-        builtin.find_files({ search_dirs = { "app/models" } })
+      builtin.find_files({ search_dirs = { "app/models" } })
     end, { desc = "Open Rails Models" } )
     vim.keymap.set('n', '<leader>trsm', function()
-        builtin.live_grep({ search_dirs = { "app/models" } })
+      builtin.live_grep({ search_dirs = { "app/models" } })
     end, { desc = "Grep Rails Models" } )
     vim.keymap.set('n', '<leader>trc', function()
-        builtin.find_files({ search_dirs = { "app/controllers" } })
+      builtin.find_files({ search_dirs = { "app/controllers" } })
     end, { desc = "Open Rails Controllers" } )
     vim.keymap.set('n', '<leader>trsc', function()
-        builtin.live_grep({ search_dirs = { "app/controllers" } })
+      builtin.live_grep({ search_dirs = { "app/controllers" } })
     end, { desc = "Grep Rails Controllers" } )
     vim.keymap.set('n', '<leader>trv', function()
-        builtin.find_files({ search_dirs = { "app/views" } })
+      builtin.find_files({ search_dirs = { "app/views" } })
     end, { desc = "Open Rails Views" } )
     vim.keymap.set('n', '<leader>trsv', function()
-        builtin.live_grep({ search_dirs = { "app/views" } })
+      builtin.live_grep({ search_dirs = { "app/views" } })
     end, { desc = "Grep Rails Views" } )
   end,
 }

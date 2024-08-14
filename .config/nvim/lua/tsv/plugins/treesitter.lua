@@ -24,6 +24,7 @@ return {
         "lua",
         "gitignore",
         "yaml",
+        "embedded_template",
       }
     })
   end

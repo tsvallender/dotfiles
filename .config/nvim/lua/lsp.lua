@@ -1,6 +1,3 @@
-
-
-
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -17,14 +14,15 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 require("dapui").setup()
+
 dap.adapters.ruby = function(callback, config)
   callback {
     type = "server",
     host = "127.0.0.1",
-    port = "${port}",
+    port = "3030",
     executable = {
       command = "bundle",
-      args = { "exec", "rdbg", "-n", "--open", "--port", "${port}",
+      args = { "exec", "rdbg", "-n", "--open", "--nonstop", "--port", "3030",
         "-c", "--", "bundle", "exec", config.command, config.script,
       },
     },
@@ -32,6 +30,13 @@ dap.adapters.ruby = function(callback, config)
 end
 
 dap.configurations.ruby = {
+  {
+    type = "ruby",
+    name = "Start Rails server",
+    request = "attach",
+    localfs = true,
+    command = "rails s",
+  },
   {
     type = "ruby",
     name = "debug current file",
@@ -49,4 +54,3 @@ dap.configurations.ruby = {
     script = "${file}",
   },
 }
-

@@ -19,10 +19,10 @@ dap.adapters.ruby = function(callback, config)
   callback {
     type = "server",
     host = "127.0.0.1",
-    port = "3030",
+    port = "3035",
     executable = {
       command = "bundle",
-      args = { "exec", "rdbg", "-n", "--open", "--nonstop", "--port", "3030",
+      args = { "exec", "rdbg", "-n", "--open", "--nonstop", "--port", "3035",
         "-c", "--", "bundle", "exec", config.command, config.script,
       },
     },

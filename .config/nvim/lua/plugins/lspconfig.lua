@@ -3,7 +3,11 @@ local util = require "lspconfig/util"
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    require("lspconfig").ruby_lsp.setup({})
+    local lsp = require("lspconfig")
+    lsp.ruby_lsp.setup({})
+    lsp.rust_analyzer.setup({
+      cmd = { "/home/tsv/bin/rust-analyzer" }
+    })
     vim.keymap.set('n', '<leader>ld', function() vim.lsp.buf.definition() end, bufopts)
     vim.keymap.set('n', '<leader>la', function() vim.lsp.buf.code_action() end, bufopts)
     vim.keymap.set('n', '<leader>lK', vim.lsp.buf.signature_help, {})

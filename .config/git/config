@@ -1,8 +1,8 @@
 [user]
         name = Trevor Vallender
         email = trevor@tsvallender.co.uk
-[includeIf "gitdir:~/boxstuff/"]
-        path = ~/.config/git/config_boxstuff
+[includeIf "gitdir:~/iucn/"]
+        path = ~/.config/git/config_ibat
 [core]
         autocrlf = input
         safecrlf = true

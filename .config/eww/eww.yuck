@@ -6,6 +6,9 @@
 
 (defwidget sidestuff []
  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+  (metric :label "🔋"
+   :value {EWW_BATTERY.BAT0.capacity}
+   :onchange "")
   (metric :label "󰕾"
    :value { volume * 100 }
    :onchange "VOL=$(bc -l <<<\"scale=2; {} / 100\") ; wpctl set-volume @DEFAULT_AUDIO_SINK@ $VOL")

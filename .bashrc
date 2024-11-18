@@ -4,6 +4,7 @@ VISUAL="nvim"
 PATH=$HOME/bin:$HOME/.my_config/bin:$PATH
 shopt -s checkwinsize
 XDG_STATE_HOME=$HOME/.state
+export PSPG_CONF="$HOME/.config/pspg"
 
 LC_ALL="en_GB.UTF-8"
 

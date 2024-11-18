@@ -1,1 +1,1 @@
-\setenv PAGER 'pspg'
+\setenv PAGER 'pspg -b'

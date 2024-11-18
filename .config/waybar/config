@@ -1,0 +1,92 @@
+{
+    "layer": "top", // Waybar at top layer
+    "height": 30, // Waybar height (to be removed for auto height)
+    "modules-left": [
+       "sway/workspaces",
+       "custom/scratchpad",
+       "sway/mode",
+       "tray
+    "],
+    "modules-center": [
+      "clock",
+    ],
+    "modules-right": [
+      "network",
+      "battery",
+      "pulseaudio",
+      "custom/layout",
+      "custom/notification"
+    ],
+    "sway/mode": {
+        "format": " {}"
+    },
+    "sway/workspaces": {
+        "all-outputs": false,
+        "disable-scroll": true,
+        "format": "{index} {icon}",
+        "format-icons": {
+             "1": "",
+             "2": "󰭹",
+            "default": ""
+        }
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "format": " {:%Y-%m-%d %R}",
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
+        "format-alt": "{capacity}% {time}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-linked": "",
+        "format-disconnected": "⚠",
+        "format-alt": "{ifname} {essid} ({signalStrength}%)"
+    },
+    "pulseaudio": {
+      "format": "{icon}",
+      "format-alt": "{volume} {icon}",
+      "format-alt-click": "click-right",
+      "format-muted": "",
+      "format-icons": {
+        "headphones": "",
+        "handsfree": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "scroll-step": 10,
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-right": "pavucontrol",
+      "tooltip": false
+    },
+    "custom/notification": {
+      "tooltip": true,
+      "format": "{icon}",
+      "format-icons": {
+        "notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+        "none": " ",
+        "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+        "dnd-none": " "
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    }
+}

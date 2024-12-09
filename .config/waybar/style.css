@@ -85,3 +85,9 @@ window#waybar.solo {
 #bluetooth.connected {
     color: rgba(115, 186, 37, 1);
 }
+#custom-tp-share {
+  background-color: red;
+  color: black;
+  padding: 0 3em;
+  margin-left: 3em;
+}

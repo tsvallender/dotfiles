@@ -9,6 +9,7 @@ export PSPG_CONF="$HOME/.config/pspg"
 LC_ALL="en_GB.UTF-8"
 
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/openssl-1.0.2u/lib
+XDG_CURRENT_DESKTOP=sway
 XDG_DOWNLOAD_DIR=$HOME/downloads
 XDG_PICTURES_DIR=$HOME/img
 HYPRSHOT_DIR=$XDG_PICTURES_DIR/screenshots

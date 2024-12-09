@@ -9,6 +9,7 @@
     "],
     "modules-center": [
       "clock",
+      "custom/tp-share",
     ],
     "modules-right": [
       "network",
@@ -27,6 +28,7 @@
         "format-icons": {
              "1": "",
              "2": "󰭹",
+             "3": "",
             "default": ""
         }
     },
@@ -88,5 +90,14 @@
       "on-click": "swaync-client -t -sw",
       "on-click-right": "swaync-client -d -sw",
       "escape": true
+    },
+    "custom/tp-share": {
+      "exec": "$HOME/bin/tp-sharing",
+      "interval": 5,
+      "hide-empty-text": true,
+      "on-click": "tp unshare",
+      "return-type": "string",
+      "format": "{}",
+      "format-icon": ""
     }
 }

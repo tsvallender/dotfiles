@@ -1,7 +1,7 @@
 PAGER="less -r"
 EDITOR="nvim"
 VISUAL="nvim"
-PATH=$HOME/bin:$HOME/.my_config/bin:$PATH
+PATH=$HOME/bin:$HOME/.my_config/bin:/usr/local/go/bin:$PATH
 shopt -s checkwinsize
 XDG_STATE_HOME=$HOME/.state
 export PSPG_CONF="$HOME/.config/pspg"

@@ -4,7 +4,7 @@ return {
     dimming = {
       alpha = 0.1,
       inactive = true,
-      color = { "#ffffff" },
+      color = { "Normal", "#ffffff" },
     },
   },
   config = function()

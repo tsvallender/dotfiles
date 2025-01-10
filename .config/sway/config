@@ -5,18 +5,17 @@ set $down j
 set $up k
 set $right l
 
-set $term alacritty
+set $term ghostty
 
 output * bg /home/tsv/img/wallpaper/swirl.jpg fill
 # Home
 output eDP-1 resolution 1920x1200 position 0 0
-output DP-5 resolution 2560x1440 position 1920 0
+output DP-5 resolution 2560x1440 position 1920 0 transform 270
 
 # Work
 # output eDP-1 resolution 1920x1200 position 0 0
-# output DP-3 resolution 1920x1080 position 1920 0
-# output DP-4 resolution 1920x1080 position 3840 0
-#
+# output DP-4 resolution 1920x1080 position 1920 0
+
 
 # Start a terminal
 bindsym $mod+Return exec $$term

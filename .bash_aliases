@@ -5,7 +5,7 @@ alias less="less -r"
 [[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
 alias be="bundle exec"
 alias checkport="sudo netstat -tnlp | grep"
-alias dockerpurge="docker system prune --all --force --volumes"
+alias dockerpurge="docker system prune --all --force --volumes && docker prune volumes -a"
 alias dockerkill="docker stop \`docker ps -a -q\`"
 alias vi="nvim"
 alias tn="tmux new-window -n"

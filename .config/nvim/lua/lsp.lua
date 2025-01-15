@@ -15,42 +15,18 @@ end
 
 require("dapui").setup()
 
-dap.adapters.ruby = function(callback, config)
-  callback {
-    type = "server",
-    host = "127.0.0.1",
-    port = "3035",
-    executable = {
-      command = "bundle",
-      args = { "exec", "rdbg", "-n", "--open", "--nonstop", "--port", "3035",
-        "-c", "--", "bundle", "exec", config.command, config.script,
-      },
-    },
-  }
-end
+dap.adapters.rdbg = {
+  type = "server",
+  host = "localhost",
+  port = "3036",
+}
 
 dap.configurations.ruby = {
   {
-    type = "ruby",
-    name = "Start Rails server",
+    type = "rdbg",
+    name = "Attach to running Rails process",
     request = "attach",
-    localfs = true,
-    command = "rails s",
-  },
-  {
-    type = "ruby",
-    name = "debug current file",
-    request = "attach",
-    localfs = true,
-    command = "ruby",
-    script = "${file}",
-  },
-  {
-    type = "ruby",
-    name = "run current spec file",
-    request = "attach",
-    localfs = true,
-    command = "rspec",
-    script = "${file}",
+    debugPort = "localhost:3036",
+    localfsMap = "/ibat:/home/tsv/iucn/ibat",
   },
 }

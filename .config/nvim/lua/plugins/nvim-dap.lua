@@ -7,5 +7,6 @@ return {
     vim.keymap.set('n', '<leader>do', require('dap').step_over)
     vim.keymap.set('n', '<leader>dr', require('dap').repl.open)
     vim.keymap.set('n', '<leader>dx', require('dap').terminate)
+    vim.keymap.set('n', '<leader>dt', require('dapui').toggle)
   end
 }

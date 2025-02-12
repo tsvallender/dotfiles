@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 require('options')
 require('lazy-plugins') -- Install plugins with Lazy
 require('completion') -- Completion

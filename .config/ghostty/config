@@ -1,1 +1,8 @@
   gtk-titlebar = false
+  font-family-italic = "Monaspace Radon Var"
+
+  window-padding-x = 5
+  window-padding-y = 5
+  window-padding-color = extend
+
+  background-opacity = 0.95

@@ -1,1 +1,1 @@
-\setenv PAGER 'pspg -b'
+\setenv PAGER 'pspg -b --clipboard-app 1'

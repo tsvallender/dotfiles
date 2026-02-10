@@ -1,4 +1,5 @@
 [main]
 enable_pager = True
 multi_line = True
-pager = /usr/bin/pspg
+# pager = /usr/bin/pspg --style=0
+pager = less

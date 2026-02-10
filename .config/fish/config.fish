@@ -20,7 +20,6 @@ end
 
 set CFLAGS "-Wall -Werror -Wextra"
 
-alias pgcli="~/bin/pgcli/bin/pgcli"
 alias weather="curl wttr.in/~Isle+of+Wight"
 alias pubip="curl -4 icanhazip.com"
 alias less="less -r"
@@ -33,9 +32,9 @@ alias vi="nvim"
 alias tn="tmux new-window -n"
 alias genpdf="pandoc -o migration.pdf -t ms"
 alias cc="gcc $CFLAGS"
-alias irc="ssh kernighan -t tmux attach -t irc"
 alias wipe="truncate -s 0"
-alias update_ruby_build "git -C "$(rbenv root)"/plugins/ruby-build pull"
+alias update_ruby_build="git -C "$(rbenv root)"/plugins/ruby-build pull"
+alias bat="batcat"
 
 alias krc="kamal app exec -i --reuse 'bin/rails c'"
 alias krd="kamal app exec -i --reuse 'bin/rails dbconsole'"

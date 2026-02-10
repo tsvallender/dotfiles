@@ -108,5 +108,6 @@ fi
 
 eval "$(~/.rbenv/bin/rbenv init - bash)"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 . "$HOME/.cargo/env"
+
+. "$HOME/.local/bin/env"

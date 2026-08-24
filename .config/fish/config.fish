@@ -57,6 +57,8 @@ alias drldm="dc exec web bundle exec rails db:migrate"
 alias dcrldr="dc exec web bundle exec rails db:rollback"
 alias drt='dc exec web bundle exec rspec'
 
+alias gdal="docker run --rm -v /home:/home ghcr.io/osgeo/gdal:alpine-small-latest gdal"
+
 # rbenv
 set -gx PATH '/home/tsv/.rbenv/shims' $PATH
 set -gx RBENV_SHELL fish

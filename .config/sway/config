@@ -9,11 +9,13 @@ set $term ghostty
 
 exec swayosd-server
 
-output "*" bg ~/img/wallpaper/swirl.jpg fill
+output eDP-1 bg ~/img/wallpaper/swirl.jpg fill
+output DP-3 bg ~/img/wallpaper/gideon.jpg fill
+output DP-4 bg ~/img/wallpaper/the-spear-cuts-through-water.jpg fill
 # Home
-output eDP-1 resolution 1920x1200 position 0 0
-output DP-3 resolution 2560x1440 position 1920 0 transform 270
-output DP-4 resolution 2560x1440 position 3360 0 transform 90
+output eDP-1 resolution 1920x1200 position 2880 0
+output DP-3 resolution 2560x1440 position 1440 0 transform 90
+output DP-4 resolution 2560x1440 position 0 0 transform 270
 
 workspace 1 output eDP-1
 workspace 2 output DP-3
